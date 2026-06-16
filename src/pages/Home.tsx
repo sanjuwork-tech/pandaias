@@ -94,7 +94,7 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           <span className="block">The UPSC examination is</span>
-          <span className="block text-brand-red">not a sprint</span>
+          <span className="block text-brand-red">not a sprint.</span>
           <span className="block">It is a <span className="text-navy-900 bg-brand-red-light px-2 rounded-md border border-brand-red/15">marathon of Discipline</span>.</span>
         </motion.h1>
  
