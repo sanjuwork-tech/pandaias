@@ -32,11 +32,6 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
             <div className="w-12 h-12 bg-white rounded-lg border border-slate-200 overflow-hidden flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0">
               <img src={logo} alt="Panda IAS Logo" className="w-full h-full object-contain" />
             </div>
-            <div>
-              <span className="font-display font-bold text-2xl tracking-tight text-brand-red block leading-none">
-                PandaIAS
-              </span>
-            </div>
           </div>
 
           {/* Desktop Navigation */}

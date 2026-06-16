@@ -19,14 +19,13 @@ export default function Footer({ setActivePage }: FooterProps) {
               <div className="w-8 h-8 bg-white rounded-md overflow-hidden flex items-center justify-center shrink-0">
                 <img src={logo} alt="PandaIAS Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="font-display font-semibold text-lg text-white">PandaIAS</span>
             </div>
             <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
               We celebrate quiet consistency, structured focus, and disciplined consistency. Walk steadily like a panda, showing up every single day.
             </p>
             <div className="flex items-center space-x-2 text-xs font-mono text-brand-red pt-2">
               <Handshake className="w-3.5 h-3.5" />
-              <span>For those who refuse to QUIT.</span>
+              <span>Calm. Focused. Unstoppable.</span>
             </div>
           </div>
 

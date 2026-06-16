@@ -5,7 +5,7 @@ import {
   Handshake, UserCheck, ShieldCheck 
 } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
-import chatbotIcon from "../../assets/Chatbot.png";
+import chatbotIcon from "../../assets/logo.jpg";
 
 interface Message {
   id: string;

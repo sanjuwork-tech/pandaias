@@ -84,7 +84,7 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
           whileHover={{ scale: 1.03 }}
         >
           <Sparkle className="w-3.5 h-3.5 text-brand-red animate-pulse" />
-          <span>FOR THOSE WHO REFUSED TO QUIT.</span>
+          <span>CALM. FOCUSED. UNSTOPPABLE.</span>
         </motion.div>
         
         <motion.h1 
@@ -93,9 +93,9 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <span className="block">Even one who stumbles can</span>
-          <span className="block text-brand-red">rise again</span>
-          <span className="block">through <span className="text-navy-900 bg-brand-red-light px-2 rounded-md border border-brand-red/15">perseverance</span>.</span>
+          <span className="block">The UPSC examination is</span>
+          <span className="block text-brand-red">not a sprint</span>
+          <span className="block">It is a <span className="text-navy-900 bg-brand-red-light px-2 rounded-md border border-brand-red/15">marathon of Discipline</span>.</span>
         </motion.h1>
  
         <motion.p 
@@ -104,7 +104,7 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          <span className="font-semibold text-navy-900 block">We are here to stand with you as true companions, support your mental well-being, and transform your resilience into nation-building power.</span>
+          <span className="font-semibold text-navy-900 block">PANDA IAS stands for aspirants who believe that quiet consistency defeats temporary brilliance.</span>
         </motion.p>
  
         {/* Companion Call-to-action */}
@@ -231,12 +231,11 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
                   <BookOpen className="w-24 h-24 text-brand-red" />
                 </div>
                 <h5 className="text-[10px] font-mono font-bold text-brand-red uppercase tracking-wider mb-2">Bhagavad Gita 2.50</h5>
-                <p className="text-sm sm:text-base font-bold text-navy-950 font-serif mb-2 leading-relaxed">
-                  बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते ।<br />
-                  तस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम् ॥
+                <p className="text-lg font-bold text-navy-950 font-serif mb-1 leading-relaxed">
+                  योगः कर्मसु कौशलम्
                 </p>
                 <p className="text-xs text-slate-600 leading-relaxed italic">
-                  "One who is engaged in disciplined action rids himself of both good and bad reactions even in this life. Therefore, strive for Yoga, which is the art of all work—excellence in action comes through disciplined consistency."
+                  “Excellence comes through disciplined action.”
                 </p>
               </div>
             </motion.div>
