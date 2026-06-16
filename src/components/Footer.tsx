@@ -17,12 +17,12 @@ export default function Footer({ setActivePage }: FooterProps) {
           <div className="md:col-span-2 space-y-4" id="footer-philosophy-col">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-white rounded-md overflow-hidden flex items-center justify-center shrink-0">
-                <img src={logo} alt="CockroachIAS Logo" className="w-full h-full object-contain" />
+                <img src={logo} alt="PandaIAS Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="font-display font-semibold text-lg text-white">CockroachIAS</span>
+              <span className="font-display font-semibold text-lg text-white">PandaIAS</span>
             </div>
             <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
-              We chose to start in the dark, damp crevices where they left us, only to cultivate the resilience needed to run the highest machinery of this nation.
+              We celebrate quiet consistency, structured focus, and disciplined consistency. Walk steadily like a panda, showing up every single day.
             </p>
             <div className="flex items-center space-x-2 text-xs font-mono text-brand-red pt-2">
               <Handshake className="w-3.5 h-3.5" />
@@ -92,7 +92,7 @@ export default function Footer({ setActivePage }: FooterProps) {
 
         {/* Bottom Bar */}
         <div className="border-t border-navy-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} CockroachIAS Companion Institute. Built on the bedrock of raw survival.</p>
+          <p>© {new Date().getFullYear()} PandaIAS Companion Institute. Built on the bedrock of disciplined consistency.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0" id="footer-legal-bar">
             <span>UPSC is a marathon. Walk slow, walk long.</span>
             <span>Supporting aspirants nationwide.</span>

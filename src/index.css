@@ -19,9 +19,9 @@
   --color-navy-900: #171717;
   --color-navy-950: #0a0a0a;
 
-  --color-brand-red: #c91c1c;
-  --color-brand-red-hover: #a81414;
-  --color-brand-red-light: #fdf2f2;
+  --color-brand-red: #db2777; /* Accent Pink (10%) */
+  --color-brand-red-hover: #be185d;
+  --color-brand-red-light: #fdf2f8;
 }
 
 @layer base {

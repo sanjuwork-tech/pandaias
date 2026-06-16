@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { ArrowLeft, MagnifyingGlass, BookOpen, Clock, Tag, X, ListNumbers, ShieldCheck, Sparkle, Trophy } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
-import raw2023 from "../data/Cockroachmainsanswers/2023GS.json";
-import raw2024 from "../data/Cockroachmainsanswers/2024GS.json";
-import raw2025 from "../data/Cockroachmainsanswers/2025gs.json";
+import raw2023 from "../data/PandaMainsAnswers/2023GS.json";
+import raw2024 from "../data/PandaMainsAnswers/2024GS.json";
+import raw2025 from "../data/PandaMainsAnswers/2025gs.json";
 
 interface AnswerSection {
   section_id: number;
@@ -14,7 +14,7 @@ interface AnswerSection {
   items?: string[];
 }
 
-interface CockroachAnswerItem {
+interface PandaAnswerItem {
   resource_type: string;
   platform: string;
   question: {
@@ -28,48 +28,48 @@ interface CockroachAnswerItem {
   answer: AnswerSection[];
 }
 
-const cockroachAnswersData = [
-  ...(raw2025 as CockroachAnswerItem[]),
-  ...(raw2024 as CockroachAnswerItem[]),
-  ...(raw2023 as CockroachAnswerItem[])
+const pandaAnswersData = [
+  ...(raw2025 as PandaAnswerItem[]),
+  ...(raw2024 as PandaAnswerItem[]),
+  ...(raw2023 as PandaAnswerItem[])
 ];
 
-interface MainsCockroachAnswersPageProps {
+interface MainsPandaAnswersPageProps {
   setActivePage?: (page: string) => void;
 }
 
-export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockroachAnswersPageProps) {
+export default function MainsPandaAnswersPage({ setActivePage }: MainsPandaAnswersPageProps) {
   const [selectedPaper, setSelectedPaper] = useState<string>("All");
   const [selectedTag, setSelectedTag] = useState<string>("All");
   const [selectedYear, setSelectedYear] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [selectedQuestion, setSelectedQuestion] = useState<CockroachAnswerItem | null>(null);
+  const [selectedQuestion, setSelectedQuestion] = useState<PandaAnswerItem | null>(null);
 
   // Set document title
   useEffect(() => {
-    document.title = "UPSC Mains Cockroach Answers | CockroachIAS";
+    document.title = "UPSC Mains Panda Answers | PandaIAS";
   }, []);
 
   // Compute unique filters dynamically
   const uniquePapers = useMemo(() => {
-    const papers = cockroachAnswersData.map(item => item.question.paper);
+    const papers = pandaAnswersData.map(item => item.question.paper);
     return ["All", ...Array.from(new Set(papers))];
   }, []);
 
   const uniqueTags = useMemo(() => {
-    const tags = cockroachAnswersData.flatMap(item => item.question.syllabus_tags);
+    const tags = pandaAnswersData.flatMap(item => item.question.syllabus_tags);
     return ["All", ...Array.from(new Set(tags))];
   }, []);
 
   const uniqueYears = useMemo(() => {
-    const years = cockroachAnswersData.map(item => String(item.question.year));
+    const years = pandaAnswersData.map(item => String(item.question.year));
     const sortedYears = Array.from(new Set(years)).sort((a, b) => Number(b) - Number(a));
     return ["All", ...sortedYears];
   }, []);
 
   // Filtered items based on search and selects
   const filteredQuestions = useMemo(() => {
-    return cockroachAnswersData.filter((item) => {
+    return pandaAnswersData.filter((item) => {
       const matchPaper = selectedPaper === "All" || item.question.paper === selectedPaper;
       const matchTag = selectedTag === "All" || item.question.syllabus_tags.includes(selectedTag);
       const matchYear = selectedYear === "All" || String(item.question.year) === selectedYear;
@@ -83,10 +83,10 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
 
   // Statistics summaries
   const stats = useMemo(() => {
-    const totalCount = cockroachAnswersData.length;
+    const totalCount = pandaAnswersData.length;
     const papersCount = uniquePapers.length - 1; // Subtract "All"
     const tagsCount = uniqueTags.length - 1; // Subtract "All"
-    const avgMarks = cockroachAnswersData.reduce((acc, curr) => acc + curr.question.marks, 0) / (totalCount || 1);
+    const avgMarks = pandaAnswersData.reduce((acc, curr) => acc + curr.question.marks, 0) / (totalCount || 1);
 
     return {
       totalCount,
@@ -103,7 +103,7 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
       exit={{ opacity: 0, y: -15 }}
       transition={{ duration: 0.4 }}
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 relative"
-      id="mains-cockroach-answers-root"
+      id="mains-panda-answers-root"
     >
       {/* Header section with Back Button */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-6">
@@ -122,7 +122,7 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
               <ShieldCheck className="w-5 h-5" />
             </span>
             <h1 className="text-2xl sm:text-3xl font-display font-bold text-navy-950">
-              UPSC Mains Cockroach Answers
+              UPSC Mains Panda Answers
             </h1>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-3xl">
@@ -138,7 +138,7 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
             <Trophy className="w-6 h-6" />
           </div>
           <div>
-            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Cockroach Answers</span>
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Panda Answers</span>
             <span className="text-2xl font-display font-bold text-navy-950 font-mono mt-0.5 block">
               {stats.totalCount}
             </span>
@@ -255,10 +255,10 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
       </div>
 
       {/* Main content area - Cards list grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" id="mains-cockroach-answers-list">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" id="mains-panda-answers-list">
         {filteredQuestions.length === 0 ? (
           <div className="col-span-full bg-white border border-slate-200/80 rounded-xl p-12 text-center text-sm text-slate-400 font-medium">
-            No Cockroach Answers match your filters. Reset search query or selection filters to browse all items.
+            No Panda Answers match your filters. Reset search query or selection filters to browse all items.
           </div>
         ) : (
           filteredQuestions.map((item, idx) => (
@@ -305,7 +305,7 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
                   onClick={() => setSelectedQuestion(item)}
                   className="bg-navy-900 hover:bg-black text-white text-[11px] font-bold uppercase tracking-wider py-2 px-3.5 rounded-lg transition-colors cursor-pointer shrink-0"
                 >
-                  Cockroach Answer
+                  Panda Answer
                 </button>
               </div>
             </motion.div>
@@ -333,7 +333,7 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 220 }}
               className="fixed inset-y-0 right-0 z-101 w-full md:w-[650px] bg-white shadow-2xl flex flex-col h-full border-l border-slate-200"
-              id="cockroach-answer-drawer"
+              id="panda-answer-drawer"
             >
               {/* Drawer Header */}
               <div className="p-6 border-b border-slate-200 flex items-start justify-between gap-4 bg-slate-50/70">
@@ -379,7 +379,7 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
                   ))}
                 </div>
 
-                {/* Structured cockroach answer content sections */}
+                {/* Structured panda answer content sections */}
                 <div className="space-y-6">
                   {selectedQuestion.answer.map((sec) => {
                     switch (sec.type) {
@@ -477,7 +477,7 @@ export default function MainsCockroachAnswersPage({ setActivePage }: MainsCockro
 
               {/* Drawer footer information block */}
               <div className="p-4 border-t border-slate-100 bg-slate-50 text-[10px] text-center text-slate-400 font-medium font-mono">
-                COCKROACH IAS • SOURCE: COCKROACHMAINSANSWERS
+                PANDA IAS • SOURCE: PANDAMANSWERS
               </div>
             </motion.div>
           </>

@@ -43,7 +43,7 @@ export default function MainsThemeWiseAnalysisPage({ setActivePage }: MainsTheme
 
   // Set document title
   useEffect(() => {
-    document.title = "UPSC Mains Theme Wise Analysis | CockroachIAS";
+    document.title = "UPSC Mains Theme Wise Analysis | PandaIAS";
   }, []);
 
   // Get current dataset based on selected paper

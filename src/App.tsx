@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import PYQAnalysisPage from "./pages/PYQAnalysisPage";
 import UPSCMetroMapPage from "./pages/UPSCMetroMapPage";
 import MainsPYQAnalysisPage from "./pages/MainsPYQAnalysisPage";
-import MainsCockroachAnswersPage from "./pages/MainsCockroachAnswersPage";
+import MainsPandaAnswersPage from "./pages/MainsPandaAnswersPage";
 import MainsThemeWiseAnalysisPage from "./pages/MainsThemeWiseAnalysisPage";
 import ConstitutionExplorerPage from "./pages/ConstitutionExplorerPage";
 import { Sparkle, X, Handshake } from "@phosphor-icons/react";
@@ -34,8 +34,8 @@ export default function App() {
         return <PYQAnalysisPage />;
       case "mains-pyq":
         return <MainsPYQAnalysisPage setActivePage={setActivePage} />;
-      case "mains-cockroach-answers":
-        return <MainsCockroachAnswersPage setActivePage={setActivePage} />;
+      case "mains-panda-answers":
+        return <MainsPandaAnswersPage setActivePage={setActivePage} />;
       case "mains-theme-analysis":
         return <MainsThemeWiseAnalysisPage setActivePage={setActivePage} />;
       case "constitution-explorer":
@@ -65,7 +65,7 @@ export default function App() {
           <div className="flex items-center gap-2 max-w-4xl mx-auto text-left sm:text-center leading-relaxed">
             <Handshake className="w-4 h-4 text-white/70 shrink-0 hidden sm:inline" />
             <span>
-              COCKROACH IAS is not about an insect — it is about the human capacity to persist when the world expects you to quit. We are your companions.
+              PANDA IAS is not about an animal — it is about the power of calm determination in a world obsessed with speed. We are your companions.
             </span>
           </div>
           <button 

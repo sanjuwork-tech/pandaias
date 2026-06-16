@@ -19,7 +19,7 @@ export default function Resources({ setActivePage }: ResourcesProps) {
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="text-xs font-mono font-bold text-brand-red tracking-widest uppercase bg-brand-red-light px-3.5 py-1 rounded-full border border-brand-red/10">
-          CockroachIAS Repository
+          PandaIAS Repository
         </span>
         <h1 className="text-3xl sm:text-4xl font-display font-bold text-navy-950">
           Our Advanced Resources & Tools
@@ -154,7 +154,7 @@ export default function Resources({ setActivePage }: ResourcesProps) {
           </button>
         </motion.div>
 
-        {/* Card 4: UPSC Mains Cockroach Answers */}
+        {/* Card 4: UPSC Mains Panda Answers */}
         <motion.div 
           variants={{
             hidden: { opacity: 0, y: 25 },
@@ -171,7 +171,7 @@ export default function Resources({ setActivePage }: ResourcesProps) {
             <div className="space-y-2">
               <span className="text-[10px] font-mono font-bold text-brand-red uppercase tracking-wider">High Scoring Blueprints</span>
               <h3 className="text-xl font-display font-bold text-navy-950">
-                UPSC Mains Cockroach Answers
+                UPSC Mains Panda Answers
               </h3>
               <p className="text-xs text-slate-500 leading-relaxed">
                 Step-by-step expert solutions covering UPSC GS Mains questions. Analyze the structural flow, logical layout, data insertions, and high-impact conclusions.
@@ -184,10 +184,10 @@ export default function Resources({ setActivePage }: ResourcesProps) {
           </div>
 
           <button
-            onClick={() => setActivePage("mains-cockroach-answers")}
+            onClick={() => setActivePage("mains-panda-answers")}
             className="mt-8 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition duration-150 flex items-center justify-center gap-2 cursor-pointer w-full shadow-md"
           >
-            <span>Explore Cockroach Answers</span>
+            <span>Explore Panda Answers</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </motion.div>
@@ -276,7 +276,7 @@ export default function Resources({ setActivePage }: ResourcesProps) {
           <Sparkle className="w-6 h-6 animate-pulse" />
         </div>
         <div>
-          <h4 className="text-sm font-bold text-navy-950">CockroachIAS Support Integrity</h4>
+          <h4 className="text-sm font-bold text-navy-950">PandaIAS Support Integrity</h4>
           <p className="text-xs text-slate-500 mt-1 leading-relaxed">
             All primary mapping tools and analytical platforms remain completely open-access and free. No paywalls, no popups, and no advertising. We stand with you as companions through the journey.
           </p>

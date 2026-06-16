@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { 
   Handshake, ShieldCheck, Compass, Flame, Trophy, 
   ArrowRight, Sparkle, BookOpen, Quotes, Info, Check, X,
-  Question, CaretRight, CheckCircle, Warning, Play
+  Question, CaretRight, CheckCircle, Warning, Play, Hourglass, Plant, Medal
 } from "@phosphor-icons/react";
 import { SURVIVAL_TRAITS, CONTROVERSY_DETAILS, SURVIVOR_QUIZ_QUESTIONS } from "../data";
 import { Course, SurvivalTrait } from "../types";
@@ -11,7 +11,7 @@ import IndiaMapSection from "../components/IndiaMapSection";
 
 export default function Home({ setActivePage }: { setActivePage: (page: string) => void }) {
   // Selected trait for philosophy viewer
-  const [selectedTrait, setSelectedTrait] = useState<string>("resilience");
+  const [selectedTrait, setSelectedTrait] = useState<string>("patience");
   
   // Trial Modal state
   const [activeTrialCourse, setActiveTrialCourse] = useState<Course | null>(null);
@@ -26,13 +26,14 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
   // Activate trait select
   const currentTraitData = SURVIVAL_TRAITS.find(t => t.id === selectedTrait) || SURVIVAL_TRAITS[0];
 
-  // Map icon strings to Lucide components
+  // Map icon strings to Phosphor components
   const getTraitIcon = (iconName: string, className: string) => {
     switch (iconName) {
-      case "ShieldCheck": return <ShieldCheck className={className} />;
+      case "Hourglass": return <Hourglass className={className} />;
       case "Compass": return <Compass className={className} />;
-      case "Flame": return <Flame className={className} />;
-      case "Award": return <Trophy className={className} />;
+      case "Sprout": return <Plant className={className} />;
+      case "Trophy": return <Trophy className={className} />;
+      case "Award": return <Medal className={className} />;
       default: return <ShieldCheck className={className} />;
     }
   };
@@ -190,12 +191,12 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
                 </p>
 
                 <div className="mt-6 border-t border-navy-800 pt-4 space-y-3">
-                  <h5 className="text-sm font-bold tracking-tight text-white">At COCKROACH IAS, we focus on the positive symbolism:</h5>
+                  <h5 className="text-sm font-bold tracking-tight text-white">At PANDA IAS, we focus on the positive symbolism:</h5>
                   <ul className="space-y-2 text-xs text-slate-300">
-                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>A cockroach <strong className="text-white">survives</strong> where others give up.</span></li>
-                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>It <strong className="text-white">adapts</strong>.</span></li>
-                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>It <strong className="text-white">endures</strong>.</span></li>
-                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>It <strong className="text-white">persists</strong> against overwhelming odds.</span></li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>A panda <strong className="text-white">does not rush</strong>.</span></li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>It <strong className="text-white">does not waste energy</strong>.</span></li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>It <strong className="text-white">remains calm</strong> under pressure.</span></li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-brand-red shrink-0" /><span>It <strong className="text-white">survives</strong> through patience and persistence.</span></li>
                   </ul>
                 </div>
               </div>
@@ -210,13 +211,11 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <span className="text-xs font-mono font-bold text-brand-red tracking-widest uppercase block">Why we named ourselves Cockroachias</span>
+              <span className="text-xs font-mono font-bold text-brand-red tracking-widest uppercase block">Why we named ourselves Panda IAS</span>
               
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-navy-950 leading-tight">
-                India’s First Academy Dedicated to the Science of Resilience.
+                India’s First Academy Dedicated to Disciplined Consistency.
               </h2>
-
-
 
               {/* Brand manifesto */}
               <div className="bg-navy-50/50 border-l-4 border-brand-red p-6 rounded-r-xl space-y-3">
@@ -226,11 +225,18 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
                 <p className="text-xs text-slate-500 text-right font-medium">— Founding Manifesto</p>
               </div>
 
-              {/* Aspirant quote */}
-              <div className="p-6 bg-slate-50 rounded-xl border border-slate-200 relative">
-                <Quotes className="w-6 h-6 text-brand-red/20 absolute top-3 left-3" />
-                <p className="text-sm text-slate-700 leading-relaxed italic pl-4">
-                  Many aspirants are told they are not good enough. Many fail Prelims, Mains, or Interviews. Many are underestimated because of their background, language, or financial condition. Yet <strong className="text-navy-950 not-italic">they continue.</strong> Like the cockroach, they survive every setback and return stronger.
+              {/* Gita Philosophical Box */}
+              <div className="p-6 bg-brand-red-light border border-brand-red/20 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5">
+                  <BookOpen className="w-24 h-24 text-brand-red" />
+                </div>
+                <h5 className="text-[10px] font-mono font-bold text-brand-red uppercase tracking-wider mb-2">Bhagavad Gita 2.50</h5>
+                <p className="text-sm sm:text-base font-bold text-navy-950 font-serif mb-2 leading-relaxed">
+                  बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते ।<br />
+                  तस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम् ॥
+                </p>
+                <p className="text-xs text-slate-600 leading-relaxed italic">
+                  "One who is engaged in disciplined action rids himself of both good and bad reactions even in this life. Therefore, strive for Yoga, which is the art of all work—excellence in action comes through disciplined consistency."
                 </p>
               </div>
             </motion.div>
@@ -269,16 +275,15 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
 
         </div>
       </section>
-
-      {/* 3. COCKROACH WISDOM: Interactive biological facts to UPSC lessons */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="cockroach-wisdom">
+      {/* 3. PANDA WISDOM: Interactive biological facts to UPSC lessons */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="panda-wisdom">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-mono font-bold text-brand-red tracking-widest uppercase">The Biology of Success</span>
           <h2 className="text-3xl font-display font-bold text-navy-950 mt-2">
-            The Indestructible Survival Blueprint: Adapting Nature's Ultimate Instincts
+            The Calm Panda Blueprint: Adapting Nature's Most Disciplined Instincts
           </h2>
           <p className="text-sm text-slate-500 mt-3 leading-relaxed">
-            While we fiercely believe you are <strong className="text-navy-950 underline decoration-slate-300">NOT</strong> a cockroach to be treated like a commodity, we proudly borrow the biological blueprint of nature's most indomitable survivor to withstand the UPSC grind. Click any trait below to see its UPSC lesson:
+            At PANDA IAS, we believe in the power of calm determination and disciplined consistency. Click any trait below to see its UPSC lesson:
           </p>
         </div>
 
@@ -673,7 +678,7 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
                     <div className="bg-slate-50 p-4 border border-emerald-100 rounded-xl space-y-1 text-xs text-left text-slate-600 font-sans">
                       <span className="font-bold text-navy-900 block font-mono text-[9px] uppercase text-emerald-800">COVENANT PACT</span>
                       <p className="text-[11px] leading-relaxed">
-                        "Remember, you are not cockroach. You are entering this platform as a student building unbreakable grit, but you will leave it as an administrator ready to build this nation."
+                        "Remember, selection is not won by panic, but by showing up with disciplined consistency. You are entering this platform as a student building quiet resilience, but you will leave it as an administrator ready to serve this nation with excellence."
                       </p>
                     </div>
 

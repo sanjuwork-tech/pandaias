@@ -30,11 +30,11 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
             id="header-logo-container"
           >
             <div className="w-12 h-12 bg-white rounded-lg border border-slate-200 overflow-hidden flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0">
-              <img src={logo} alt="Cockroach IAS Logo" className="w-full h-full object-contain" />
+              <img src={logo} alt="Panda IAS Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="font-display font-bold text-2xl tracking-tight text-brand-red block leading-none">
-                CockroachIAS
+                PandaIAS
               </span>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
                       id={`nav-btn-${item.id}`}
                       onClick={() => setActivePage("resources")}
                       className={`flex items-center space-x-1.5 py-1 transition-all duration-200 cursor-pointer ${
-                        activePage === "resources" || activePage === "pyq-analysis" || activePage === "mains-pyq" || activePage === "mains-cockroach-answers" || activePage === "mains-theme-analysis" || activePage === "metro-map" || activePage === "constitution-explorer"
+                        activePage === "resources" || activePage === "pyq-analysis" || activePage === "mains-pyq" || activePage === "mains-panda-answers" || activePage === "mains-theme-analysis" || activePage === "metro-map" || activePage === "constitution-explorer"
                           ? "text-brand-red border-b-2 border-brand-red font-bold"
                           : "text-slate-500 hover:text-brand-red font-medium"
                       }`}
@@ -98,13 +98,13 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
                           </button>
                           <button
                             onClick={() => {
-                              setActivePage("mains-cockroach-answers");
+                              setActivePage("mains-panda-answers");
                               setShowDropdown(false);
                             }}
                             className="w-full text-left px-4 py-2 text-slate-700 hover:bg-slate-50 hover:text-brand-red font-semibold uppercase tracking-wider transition-colors duration-150 flex items-center gap-2 cursor-pointer text-[11px]"
                           >
                             <span className="w-1.5 h-1.5 bg-brand-red rounded-full" />
-                            <span>Mains Cockroach Answers</span>
+                            <span>Mains Panda Answers</span>
                           </button>
                           <button
                             onClick={() => {

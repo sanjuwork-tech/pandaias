@@ -102,10 +102,10 @@ const REGIONS = [
 ];
 
 const TIER_COLOR = {
-  high: '#c91c1c',      // Brand Red
-  mid: '#f43f5e',       // Light Red/Rose
-  emerging: '#fda4af',  // Pale Red/Rose
-  remote: '#fecdd3',    // Lightest Rose
+  high: '#db2777',      // Brand Pink
+  mid: '#f472b6',       // Light Pink
+  emerging: '#fbcfe8',  // Pale Pink
+  remote: '#fce7f3',    // Softest Pink
 };
 
 export default function IndiaMapSection() {
@@ -116,7 +116,7 @@ export default function IndiaMapSection() {
         <div className="mb-12 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-red-light px-4 py-1.5 text-xs font-mono font-bold text-brand-red border border-brand-red/10 uppercase tracking-wider">
             <ChatCircleText className="h-4 w-4 animate-pulse" />
-            CockroachIAS Samvad Map
+            PandaIAS Samvad Map
           </div>
           <h2 className="mb-3 font-display font-bold text-3xl sm:text-4xl text-navy-950">
             Ambition has no postal code.
@@ -156,13 +156,13 @@ export default function IndiaMapSection() {
                     <Geography
                       key={geo.rsmKey}
                       geography={geo}
-                      fill="#FFF5F5"
-                      stroke="#c91c1c"
+                      fill="#FDF2F8"
+                      stroke="#db2777"
                       strokeWidth={0.6}
                       style={{
                         default: { outline: 'none' },
-                        hover: { fill: '#FEE2E2', outline: 'none', transition: 'all 0.2s' },
-                        pressed: { fill: '#FCA5A5', outline: 'none' },
+                        hover: { fill: '#fce7f3', outline: 'none', transition: 'all 0.2s' },
+                        pressed: { fill: '#fbcfe8', outline: 'none' },
                       }}
                     />
                   ))

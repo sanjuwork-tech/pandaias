@@ -74,7 +74,7 @@ export default function PYQAnalysisPage() {
   const primaryTrap = trapPatternData[0]?.type || 'Language traps';
 
   useEffect(() => {
-    document.title = "UPSC Prelims PYQ Analysis 2014-2025 | CockroachIAS";
+    document.title = "UPSC Prelims PYQ Analysis 2014-2025 | PandaIAS";
     analyticsService.track('pyq_diagnosis_view', {
       year: selectedYear,
       subject: selectedSubject,
@@ -123,7 +123,7 @@ export default function PYQAnalysisPage() {
             <div>
               <p className="font-mono text-xs tracking-widest text-brand-red uppercase mb-2">Free Companion Tool - No Login Required</p>
               <h1 className="font-display text-3xl md:text-4xl font-bold text-white">
-                UPSC Prelims PYQ Analysis | CockroachIAS
+                UPSC Prelims PYQ Analysis | PandaIAS
               </h1>
               <p className="text-slate-400 mt-2 text-sm max-w-3xl leading-relaxed">
                 Comprehensive Pattern Analysis {totalStatistics.yearRange} — {totalStatistics.totalQuestions} Questions Mapped by Cognitive Demands and Trap Patterns.
@@ -235,7 +235,7 @@ export default function PYQAnalysisPage() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
             <div>
               <h2 className="font-display text-xl font-bold text-slate-800">
-                UPSC Prelims {selectedYear} Analysis | CockroachIAS
+                UPSC Prelims {selectedYear} Analysis | PandaIAS
               </h2>
               <p className="text-slate-500 text-sm">{yearSummaryText}</p>
             </div>

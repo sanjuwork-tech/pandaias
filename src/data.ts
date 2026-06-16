@@ -2,35 +2,43 @@ import { TeamMember, SurvivalTrait } from "./types";
 
 export const SURVIVAL_TRAITS: SurvivalTrait[] = [
   {
-    id: "resilience",
-    title: "Unrivaled Resilience",
-    tagline: "The 300-Million-Year Test",
-    biologyFact: "Cockroaches survived the Chicxulub asteroid that wiped out the dinosaurs. They can endure extreme radiation up to 15 times what is lethal to humans, and live for a week without a head.",
-    aspirantLesson: "UPSC preparation is a grueling saga of repeated failures, isolation, and mental exhaustion. True selection doesn't require genielike brilliance; it requires a mental toughness that refuses to die, regardless of how many times you fall short of the cut-off.",
-    iconName: "ShieldCheck"
+    id: "patience",
+    title: "P – Patience",
+    tagline: "Stay committed despite delays",
+    biologyFact: "Pandas feed almost exclusively on bamboo, eating up to 38kg of it daily. Because bamboo has low nutritional value, they must chew patiently for up to 12 hours a day, demonstrating ultimate focus on a singular, slow process.",
+    aspirantLesson: "The UPSC preparation journey can be long and full of delays. Stay committed to your daily routine, chewing through the syllabus patiently, knowing that growth takes time.",
+    iconName: "Hourglass"
   },
   {
-    id: "adaptability",
-    title: "Deep Adaptability",
-    tagline: "Pattern Agnosticism",
-    biologyFact: "They possess an exceptionally fluid genetic structure, allowing them to rapidly evolve immunity to man-made chemical poisons within a single generation.",
-    aspirantLesson: "The UPSC examiner will throw unexpected pattern changes, tricky current affairs questions, or completely revamp the CSAT paper. Do not build stiff, fragile study routines. Remain fluid. Adapt instantly to any shift in the terrain.",
+    id: "awareness",
+    title: "A – Awareness",
+    tagline: "Understand society, governance, and yourself",
+    biologyFact: "Pandas are highly sensitive to their habitat, using a keen sense of smell and spatial awareness to navigate complex mountainous terrains and locate resources efficiently.",
+    aspirantLesson: "A successful civil servant must develop a deep awareness of their surrounding society, structural governance issues, and their own mental boundaries.",
     iconName: "Compass"
   },
   {
-    id: "frugality",
-    title: "Extreme Efficiency",
-    tagline: "Resource Optimization",
-    biologyFact: "A survivor requires remarkably little to survive. They can stay active for over a month with absolute zero food, thriving in the quietest, darkest corners of the earth.",
-    aspirantLesson: "Living in a congested 8x8 foot room, breathing humid air, and eating simple mess food is not a sign of your defeat. It is your active training in resourcefulness. He who can govern his desires in a tiny cubicle can govern a district with absolute integrity.",
-    iconName: "Flame"
+    id: "nurturing",
+    title: "N – Nurturing Growth",
+    tagline: "Improve a little every day",
+    biologyFact: "A newborn panda cub is extremely small, weighing only about 100 grams. It grows steadily through nurturing and consistent care, eventually becoming a strong, resilient adult.",
+    aspirantLesson: "Do not expect instant mastery. Master one micro-theme, one answer structure, or one article at a time. Nurture your knowledge base steadily every day.",
+    iconName: "Sprout"
   },
   {
-    id: "pressure-resistance",
-    title: "Exoskeletal Elasticity",
-    tagline: "Thriving Under Heavy Load",
-    biologyFact: "Their bodies can compress by over 50% to slip through tiny crevices, resisting compressive forces up to 900 times their own body weight without getting hurt.",
-    aspirantLesson: "You are constantly crushed under the weight of family expectations, societal comparisons, and heavy syllabi. Instead of breaking under the weight, compress your fears, absorb the stress, slip through the cracks of adversity, and emerge undamaged.",
+    id: "discipline",
+    title: "D – Discipline",
+    tagline: "Consistency over motivation",
+    biologyFact: "Pandas do not hibernate like other bears. Regardless of freezing winter snow or scorching summer heat, they show up every day, maintaining their steady foraging discipline year-round.",
+    aspirantLesson: "Motivation is temporary and will fail you. True selection is won by discipline—showing up to write that mock answer even on days when your energy is low.",
+    iconName: "Trophy"
+  },
+  {
+    id: "achievement",
+    title: "A – Achievement",
+    tagline: "Success as a result of sustained effort",
+    biologyFact: "Pandas are excellent tree climbers and swimmers, skills developed through constant childhood play and trial-and-error, enabling them to reach safety and food in demanding environments.",
+    aspirantLesson: "Your final name on the rank list is not a stroke of luck or temporary brilliance. It is the natural achievement resulting from years of sustained, quiet effort.",
     iconName: "Award"
   }
 ];
@@ -79,24 +87,24 @@ export const TEAM_MEMBERS: TeamMember[] = [
 ];
 
 export const CONTROVERSY_DETAILS = {
-  quote: "In 2026, the term \"cockroach\" entered public discourse after remarks made by Chief Justice of India Justice Surya Kant during a court hearing, triggering a nationwide debate. What was intended as criticism was subsequently embraced by many as a symbol of resilience and dissent.",
-  source: "CJI Justice Surya Kant, 2026",
-  analysis: "At COCKROACH IAS, we choose to focus on the positive symbolism. A cockroach survives where others give up. It adapts. It endures. It persists against overwhelming odds. Many aspirants are told they are not good enough. Many fail Prelims, Mains, or Interviews. Many are underestimated because of their background, language, or financial condition. Yet they continue. Like the cockroach, they survive every setback and return stronger.",
-  ourStand: "COCKROACH IAS is therefore not about an insect. It is about the human capacity to persist when the world expects you to quit. Indian civilisation celebrates not those who never fall, but those who rise repeatedly."
+  quote: "Most coaching institutes celebrate aggression, speed, and competition. PANDA IAS celebrates something different: disciplined consistency. A panda is often misunderstood as slow, gentle, and quiet. Yet it survives in harsh environments, conserves energy intelligently, and demonstrates extraordinary focus on what matters.",
+  source: "PANDA IAS Slogan: Calm. Focused. Unstoppable.",
+  analysis: "The UPSC journey is not won by panic. It is won by consistency. It is won by patience. It is won by showing up every day for years. That is the Panda mindset.",
+  ourStand: "PANDA IAS is not about an animal. It is about the power of calm determination in a world obsessed with speed."
 };
 
 export const SURVIVOR_QUIZ_QUESTIONS = [
   {
     id: 1,
-    question: "You have spent 8 hours in a dark, windowless study cubicle. The air-conditioning breaks, and the air becomes humid. What is your survival response?",
+    question: "You have spent 8 hours in a dark, windowless study cubicle. The air-conditioning breaks, and the air becomes humid. What is your response?",
     options: [
       {
         text: "I pack my bag in frustration, tell myself I can't study under these conditions, and feel a wave of anxiety.",
         point: "Fragile State (We will help build your stamina step-by-step.)"
       },
       {
-        text: "I step out to drink black water, take 5 deep breaths, compress my fatigue like a resilient exoskeleton, and move to a well-ventilated terrace to finish my daily targets.",
-        point: "Survivor Class (Excellent adaptability! You possess real survivor instincts.)"
+        text: "I step out to drink cold water, take 5 deep breaths, conserve my energy like a calm panda, and move to a well-ventilated terrace to finish my daily targets.",
+        point: "Survivor Class (Excellent adaptability! You possess real steady instincts.)"
       },
       {
         text: "I ignore the physical heat completely, telling myself pain is an illusion, but end up with severe burnout and brain-fog the next day.",
@@ -114,7 +122,7 @@ export const SURVIVOR_QUIZ_QUESTIONS = [
       },
       {
         text: "I accept that the change is identical for all 10 Lakh aspirants, scrap my rigid study logs, adapt my syllabus linkages, and master the new game of critical thinking.",
-        point: "Adaptable Survivor (Brilliant! Real cockroaches adapt to the new temperature in seconds.)"
+        point: "Adaptable Survivor (Brilliant! Real pandas adapt to the environment through calm and consistent focus.)"
       },
       {
         text: "I rely on the same notes and short-cuts, hoping that this year was just an anomaly.",
@@ -131,7 +139,7 @@ export const SURVIVOR_QUIZ_QUESTIONS = [
         point: "Indestructible Mindset (Superb. This deep wisdom is what transforms students into administrators.)"
       },
       {
-        text: "I spiral into self-doubt, thinking I shouldn't have named Cockroachias my home, and waste the entire evening browsing success stories.",
+        text: "I spiral into self-doubt, thinking I shouldn't have named PandaIAS my home, and waste the entire evening browsing success stories.",
         point: "Vulnerable State (Let us hold your hands. This is why we are here—to catch you when you fall.)"
       },
       {

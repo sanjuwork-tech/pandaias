@@ -127,10 +127,10 @@ export default function AboutUs() {
             In recent years, nationwide discussions on civil service exam pressure highlighted the extreme environments and challenges aspirants navigate daily. The intense competition often pushes students to their limits, highlighting the need for real, empathetic ecosystems that protect student dignity and mental endurance.
           </p>
           <p className="text-slate-600 text-sm leading-relaxed">
-            We realized that competitive preparation demands far more than just study materials—it demands absolute mental support and a community that acts as a secure shoulder. We chose the name <strong>Cockroachias</strong> to honor the ultimate metaphor of survival, adaptability, and unbreakable resilience.
+            We realized that competitive preparation demands far more than just study materials—it demands absolute mental support and a community that acts as a secure shoulder. We chose the name <strong>Panda IAS</strong> to honor the ultimate metaphor of quiet focus, patience, and disciplined consistency.
           </p>
           <p className="text-slate-600 text-sm leading-relaxed">
-            The cockroach represents the ultimate survivor in the natural world: <strong>absolute endurance, unbeatable adaptability to any environment, and high physical resilience.</strong> We empower students to cultivate these exact traits—turning pressure into structured, unbreakable focus to master the syllabus.
+            The panda represents the ultimate practitioner of consistency: <strong>calm under pressure, energy conservation for high-priority tasks, and show-up-every-day persistence.</strong> We empower students to cultivate these exact traits—turning exam pressure into structured, quiet determination to master the syllabus.
           </p>
         </div>
 
@@ -156,7 +156,7 @@ export default function AboutUs() {
             <div className="space-y-1">
               <h4 className="text-sm font-bold text-navy-950 uppercase tracking-widest">OUR GROUND-LEVEL VISION</h4>
               <p className="text-xs text-slate-500 leading-relaxed">
-                To ensure every single officer entering the Indian bureaucracy has spent a chapter of their life learning ground-level survival. When an alumnus of Cockroachias becomes an administrator of a district, they will understand the exact weight of a poor citizen's struggle—for they spent their training years on the ground level.
+                To ensure every single officer entering the Indian bureaucracy has spent a chapter of their life learning disciplined consistency and calm focus. When an alumnus of Panda IAS becomes an administrator of a district, they will understand the exact weight of a citizen's struggle and handle challenges with calm determination.
               </p>
             </div>
           </div>

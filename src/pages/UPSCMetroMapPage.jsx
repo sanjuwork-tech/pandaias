@@ -74,7 +74,7 @@ export default function UPSCMetroMapPage({ setActivePage }) {
   }, [setActivePage]);
 
   useEffect(() => {
-    document.title = "UPSC Syllabus Metro Map | CockroachIAS";
+    document.title = "UPSC Syllabus Metro Map | PandaIAS";
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
   }, [handleMessage]);
@@ -90,7 +90,7 @@ export default function UPSCMetroMapPage({ setActivePage }) {
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
               <div>
                 <h1 className="font-display text-4xl font-bold leading-tight text-navy-950 md:text-5xl">
-                  UPSC Syllabus Metro Map | CockroachIAS
+                  UPSC Syllabus Metro Map | PandaIAS
                 </h1>
                 <p className="mt-4 max-w-3xl text-slate-600 leading-relaxed text-sm sm:text-base">
                   A visual command centre where every syllabus station opens microthemes, sources,

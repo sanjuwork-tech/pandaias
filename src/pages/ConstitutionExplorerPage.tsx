@@ -38,7 +38,7 @@ export default function ConstitutionExplorerPage({ setActivePage }: Constitution
   }, []);
 
   useEffect(() => {
-    document.title = "Constitution Explorer | CockroachIAS";
+    document.title = "Constitution Explorer | PandaIAS";
   }, []);
 
   return (

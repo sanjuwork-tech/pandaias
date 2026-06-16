@@ -1,6 +1,6 @@
-# CockroachIAS — For Those Who Refuse to Quit
+# Panda IAS — Calm. Focused. Unstoppable.
 
-CockroachIAS is a premium, empathy-driven companion platform engineered specifically for UPSC Civil Services Examination (CSE) aspirants. Breaking away from corporate coaching formulas and high upfront commercial paywalls, CockroachIAS stands as a supportive, honest mentor, offering interactive cognitive instruments and conceptual pathways to protect student dignity and foster unbreakable resilience.
+Panda IAS is a premium, empathy-driven companion platform engineered specifically for UPSC Civil Services Examination (CSE) aspirants. Breaking away from corporate coaching formulas and high upfront commercial paywalls, Panda IAS stands as a supportive, honest mentor, offering interactive cognitive instruments and conceptual pathways to protect student dignity and foster disciplined consistency.
 
 ---
 
@@ -29,7 +29,7 @@ CockroachIAS is a premium, empathy-driven companion platform engineered specific
 ## 📂 Project Architecture
 
 ```bash
-cockroachias/
+pandaias/
 ├── assets/                  # Shared images and visual brand assets
 ├── src/
 │   ├── pages/               # Main layout and route-level views
@@ -70,7 +70,7 @@ cockroachias/
 1. **Clone the repository:**
    ```bash
    git clone <repository_url>
-   cd cockroachias
+   cd pandaias
    ```
 
 2. **Install dependencies:**

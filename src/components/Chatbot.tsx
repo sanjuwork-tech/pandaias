@@ -35,13 +35,13 @@ export default function Chatbot({ setActivePage }: ChatbotProps) {
         {
           id: "1",
           sender: "bot",
-          text: "Hi, I am your cockroach! 🪳",
+          text: "Hi, I am your panda! 🐼",
           timestamp: new Date()
         },
         {
           id: "2",
           sender: "bot",
-          text: "Let me guess your name... Wait, tell me your name below first and let's see if my antenna is calibrated today!",
+          text: "Let me guess your name... Wait, tell me your name below first and let's see if my panda intuition is calibrated today!",
           timestamp: new Date()
         }
       ]);
@@ -100,13 +100,13 @@ export default function Chatbot({ setActivePage }: ChatbotProps) {
         {
           id: Math.random().toString(),
           sender: "bot",
-          text: `Aha! **${name}**! I knew it! (My cockroach antenna had a 99.9% hunch) 🎯`,
+          text: `Aha! **${name}**! I knew it! (My panda intuition had a 99.9% hunch) 🎯`,
           timestamp: new Date()
         },
         {
           id: Math.random().toString(),
           sender: "bot",
-          text: `Let me guess... you are an ambitious, high-resilience aspirant striving to conquer the UPSC Civil Services Examination! Am I right?`,
+          text: `Let me guess... you are an ambitious, calm, and focused aspirant striving to conquer the UPSC Civil Services Examination! Am I right?`,
           timestamp: new Date(),
           actions: [
             { 
@@ -139,7 +139,7 @@ export default function Chatbot({ setActivePage }: ChatbotProps) {
 
     // Bot introduces resources
     simulateBotResponse(
-      `Welcome to the colony! 🪳 We survived asteroid strikes, and with the right resources, you will survive the UPSC syllabus.
+      `Welcome to the sanctuary! 🐼 We focus on quiet consistency, and with the right resources, you will master the UPSC syllabus.
 
 Our platform is built on ground-level empathy and total honesty. What would you like to explore first?`,
       1000,
@@ -149,7 +149,7 @@ Our platform is built on ground-level empathy and total honesty. What would you 
 
   const getMainMenuActions = () => [
     { label: "🗺️ Syllabus Metro Map", action: () => selectResource("metro_map") },
-    { label: "📝 Mains Cockroach Answers", action: () => selectResource("mains_answers") },
+    { label: "📝 Mains Panda Answers", action: () => selectResource("mains_answers") },
     { label: "🔍 Prelims PYQ Analysis", action: () => selectResource("prelims_pyq") },
     { label: "🏛️ Constitution Explorer", action: () => selectResource("constitution") },
     { label: "📖 Trial Courses (₹249)", action: () => selectResource("courses") },
@@ -173,11 +173,11 @@ Our platform is built on ground-level empathy and total honesty. What would you 
         };
         break;
       case "mains_answers":
-        userText = "Tell me about Mains Cockroach Answers";
-        botResponse = `We have loaded detailed blueprints for **UPSC Mains PYQs (2023, 2024, and 2025)** under the **Cockroach Answers** section. Instead of unachievable academic model answers, we show you how to write structured, honest answers in exactly 7 minutes under exam pressure! Check them out on our resources page.`;
-        routeLabel = "📝 View Cockroach Answers";
+        userText = "Tell me about Mains Panda Answers";
+        botResponse = `We have loaded detailed blueprints for **UPSC Mains PYQs (2023, 2024, and 2025)** under the **Panda Answers** section. Instead of unachievable academic model answers, we show you how to write structured, honest answers in exactly 7 minutes under exam pressure! Check them out on our resources page.`;
+        routeLabel = "📝 View Panda Answers";
         routeAction = () => {
-          setActivePage("mains-cockroach-answers");
+          setActivePage("mains-panda-answers");
           setIsOpen(false);
         };
         break;
@@ -261,7 +261,7 @@ Our platform is built on ground-level empathy and total honesty. What would you 
 
     setStep("main_menu");
     simulateBotResponse(
-      "Sure thing! Here are the core navigation options and resources of Cockroach IAS:",
+      "Sure thing! Here are the core navigation options and resources of Panda IAS:",
       600,
       getMainMenuActions()
     );
@@ -272,13 +272,13 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       {
         id: "1",
         sender: "bot",
-        text: "Hi, I am your cockroach! 🪳",
+        text: "Hi, I am your panda! 🐼",
         timestamp: new Date()
       },
       {
         id: "2",
         sender: "bot",
-        text: "Let me guess your name... Wait, tell me your name below first and let's see if my antenna is calibrated today!",
+        text: "Let me guess your name... Wait, tell me your name below first and let's see if my panda intuition is calibrated today!",
         timestamp: new Date()
       }
     ]);
@@ -293,7 +293,7 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       <button
         id="chatbot-trigger-btn"
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[51px] h-[51px] rounded-full bg-navy-950 border border-slate-700 shadow-2xl hover:scale-105 hover:bg-slate-900 active:scale-95 transition-all duration-200 cursor-pointer overflow-hidden flex items-center justify-center group"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[41px] h-[41px] rounded-full bg-navy-950 border border-slate-700 shadow-2xl hover:scale-105 hover:bg-slate-900 active:scale-95 transition-all duration-200 cursor-pointer overflow-hidden flex items-center justify-center group"
         aria-label="Open support chat"
       >
         <img 
@@ -302,7 +302,7 @@ Our platform is built on ground-level empathy and total honesty. What would you 
           className="w-full h-full object-cover transition-transform duration-300 group-hover:rotate-6"
         />
         {/* Visual Pulse Indicator */}
-        <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-brand-red border-2 border-navy-950 rounded-full animate-pulse"></span>
+        <span className="absolute top-0 right-0 w-2 h-2 bg-brand-red border border-navy-950 rounded-full animate-pulse"></span>
       </button>
 
       {/* Chat window */}
@@ -314,16 +314,16 @@ Our platform is built on ground-level empathy and total honesty. What would you 
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
             id="chatbot-window"
-            className="fixed bottom-18 right-4 sm:bottom-20 sm:right-6 z-50 w-[280px] sm:w-[304px] h-[416px] bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden flex flex-col font-sans"
+            className="fixed bottom-14 right-4 sm:bottom-16 sm:right-6 z-50 w-[224px] sm:w-[244px] h-[333px] bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden flex flex-col font-sans"
           >
             {/* Header */}
             <div className="bg-navy-950 px-3 py-2 flex items-center justify-between border-b border-slate-800 text-white shrink-0">
               <div className="flex items-center space-x-2.5">
                 <div className="w-7.5 h-7.5 rounded-full bg-white/10 p-0.5 overflow-hidden flex items-center justify-center border border-white/20">
-                  <img src={chatbotIcon} alt="Cockroach Assistant" className="w-full h-full object-cover rounded-full" />
+                  <img src={chatbotIcon} alt="Panda Assistant" className="w-full h-full object-cover rounded-full" />
                 </div>
                 <div>
-                  <h4 className="text-[11px] font-bold font-mono tracking-wider text-brand-red-light uppercase leading-none">Cockroach Bot</h4>
+                  <h4 className="text-[11px] font-bold font-mono tracking-wider text-brand-red-light uppercase leading-none">Panda Bot</h4>
                   <div className="flex items-center space-x-1 mt-0.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                     <span className="text-[9px] text-slate-400 font-medium leading-none">Companion - Online</span>
