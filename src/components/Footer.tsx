@@ -16,7 +16,7 @@ export default function Footer({ setActivePage }: FooterProps) {
           {/* Brand Philosophy column */}
           <div className="md:col-span-2 space-y-4" id="footer-philosophy-col">
             <div className="flex items-center space-x-2">
-              <div className="w-24 h-8 bg-white rounded-md overflow-hidden flex items-center justify-center shrink-0">
+              <div className="w-[120px] h-[40px] bg-white rounded-md overflow-hidden flex items-center justify-center shrink-0">
                 <img src={logo} alt="PandaIAS Logo" className="w-full h-full object-contain" />
               </div>
             </div>

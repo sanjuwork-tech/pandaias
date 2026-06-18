@@ -12,11 +12,14 @@ import MainsPandaAnswersPage from "./pages/MainsPandaAnswersPage";
 import MainsThemeWiseAnalysisPage from "./pages/MainsThemeWiseAnalysisPage";
 import ConstitutionExplorerPage from "./pages/ConstitutionExplorerPage";
 import { Sparkle, X, Handshake } from "@phosphor-icons/react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 import Chatbot from "./components/Chatbot";
+import pandaImage from "../assets/panda.png";
 export default function App() {
   const [activePage, setActivePage] = useState<string>("home");
   const [showTopToast, setShowTopToast] = useState<boolean>(true);
+  const { scrollY } = useScroll();
+  const translateY = useTransform(scrollY, [0, 2000], [0, 400]);
 
   // Scroll to top on page change
   useEffect(() => {
@@ -101,6 +104,18 @@ export default function App() {
 
       {/* 5. FLOATING COMPANION CHATBOT */}
       <Chatbot setActivePage={setActivePage} />
+
+      {/* 6. FLOATING SCROLL-LINKED MASCOT (application-wide) */}
+      <motion.div 
+        className="fixed right-4 top-[25vh] z-30 pointer-events-none select-none hidden lg:block"
+        style={{ y: translateY }}
+      >
+        <img 
+          src={pandaImage} 
+          alt="Panda Mascot" 
+          className="w-32 h-32 object-contain opacity-85" 
+        />
+      </motion.div>
 
     </div>
   );

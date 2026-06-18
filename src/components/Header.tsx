@@ -29,7 +29,7 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
             className="flex items-center space-x-3 cursor-pointer group"
             id="header-logo-container"
           >
-            <div className="w-36 h-12 bg-white rounded-lg border border-slate-200 overflow-hidden flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0">
+            <div className="w-[180px] h-[60px] flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
               <img src={logo} alt="Panda IAS Logo" className="w-full h-full object-contain" />
             </div>
           </div>
