@@ -18,7 +18,6 @@ export default function PYQAnalysisPage() {
   const [selectedTopicSubject, setSelectedTopicSubject] = useState('polity');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedRows, setExpandedRows] = useState(new Set());
-  const [isLoading, setIsLoading] = useState(false);
 
   const yearQuestionsList = useMemo(() => yearQuestions[selectedYear] || [], [selectedYear]);
 
@@ -80,12 +79,6 @@ export default function PYQAnalysisPage() {
       year: selectedYear,
       subject: selectedSubject,
     });
-
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 350);
-    return () => clearTimeout(timer);
   }, [selectedYear, selectedSubject]);
 
   const savePyqEvidence = async () => {
@@ -288,7 +281,6 @@ export default function PYQAnalysisPage() {
           onToggleRow={toggleRow}
           onExpandAll={expandAll}
           onCollapseAll={collapseAll}
-          isLoading={isLoading}
         />
 
         {/* Footer Summary */}

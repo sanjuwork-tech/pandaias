@@ -3,31 +3,6 @@ import React from 'react';
 import { CaretDown, CaretUp, Warning, Lightbulb, Compass, CornersOut, CornersIn } from '@phosphor-icons/react';
 import { subjectColors, subjectNames } from '../../data/pyq/analysisData';
 
-function PYQSkeleton() {
-  return (
-    <div className="divide-y divide-slate-100">
-      {[1, 2, 3, 4, 5].map((index) => (
-        <div key={index} className="p-4 sm:p-5 flex items-start gap-4 animate-pulse">
-          {/* Question placeholder */}
-          <div className="w-10 h-10 bg-slate-200 rounded-lg shrink-0 mt-0.5" />
-          
-          <div className="flex-1 space-y-3">
-            <div className="flex gap-2">
-              <div className="h-3 bg-slate-200 rounded w-16" />
-              <div className="h-3 bg-slate-200 rounded w-24" />
-            </div>
-            <div className="h-4 bg-slate-200 rounded w-3/4" />
-            <div className="h-3 bg-slate-200 rounded w-1/2" />
-          </div>
-          
-          {/* Answer badge placeholder */}
-          <div className="w-6 h-6 bg-slate-200 rounded-full shrink-0 self-center" />
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function PYQTable({
   displayQuestions,
   isCrossYearSearch,
@@ -35,8 +10,7 @@ export default function PYQTable({
   expandedRows,
   onToggleRow,
   onExpandAll,
-  onCollapseAll,
-  isLoading = false
+  onCollapseAll
 }) {
   const allExpanded = displayQuestions.length > 0 && expandedRows.size === displayQuestions.length;
   
@@ -67,9 +41,7 @@ export default function PYQTable({
       </div>
       
       <div className="divide-y divide-slate-100">
-        {isLoading ? (
-          <PYQSkeleton />
-        ) : displayQuestions.length === 0 ? (
+        {displayQuestions.length === 0 ? (
           <div className="p-12 text-center text-slate-400">
             No questions match your search parameters. Try resetting filters.
           </div>

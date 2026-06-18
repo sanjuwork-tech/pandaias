@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Compass, BookOpen, Users, PhoneCall } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/Logonew.png";
 
 interface HeaderProps {
   activePage: string;
@@ -29,7 +29,7 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
             className="flex items-center space-x-3 cursor-pointer group"
             id="header-logo-container"
           >
-            <div className="w-12 h-12 bg-white rounded-lg border border-slate-200 overflow-hidden flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0">
+            <div className="w-36 h-12 bg-white rounded-lg border border-slate-200 overflow-hidden flex items-center justify-center shadow-xs transition-transform duration-300 group-hover:scale-105 shrink-0">
               <img src={logo} alt="Panda IAS Logo" className="w-full h-full object-contain" />
             </div>
           </div>

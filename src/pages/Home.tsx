@@ -8,6 +8,7 @@ import { SURVIVAL_TRAITS, CONTROVERSY_DETAILS, SURVIVOR_QUIZ_QUESTIONS } from ".
 import { Course, SurvivalTrait } from "../types";
 import { motion, AnimatePresence } from "motion/react";
 import IndiaMapSection from "../components/IndiaMapSection";
+import Panda3DHero from "../components/Panda3DHero";
 
 export default function Home({ setActivePage }: { setActivePage: (page: string) => void }) {
   // Selected trait for philosophy viewer
@@ -70,82 +71,98 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
       
       {/* 1. HERO SECTION: Direct, powerful, empathetic */}
       <motion.section 
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" 
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" 
         id="hero-banner"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <motion.div 
-          className="inline-flex items-center space-x-2 bg-brand-red-light text-brand-red px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6 border border-brand-red/20"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.4 }}
-          whileHover={{ scale: 1.03 }}
-        >
-          <Sparkle className="w-3.5 h-3.5 text-brand-red animate-pulse" />
-          <span>CALM. FOCUSED. UNSTOPPABLE.</span>
-        </motion.div>
-        
-        <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-navy-950 tracking-tight max-w-4xl mx-auto leading-[1.15]"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          <span className="block">The UPSC examination is</span>
-          <span className="block text-brand-red">not a sprint.</span>
-          <span className="block">It is a <span className="text-navy-900 bg-brand-red-light px-2 rounded-md border border-brand-red/15">marathon of Discipline</span>.</span>
-        </motion.h1>
- 
-        <motion.p 
-          className="mt-8 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-        >
-          <span className="font-semibold text-navy-900 block">PANDA IAS stands for aspirants who believe that quiet consistency defeats temporary brilliance.</span>
-        </motion.p>
- 
-        {/* Companion Call-to-action */}
-        <motion.div 
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          <motion.button
-            onClick={() => {
-              const element = document.getElementById("trial-section");
-              element?.scrollIntoView({ behavior: "smooth" });
-            }}
-            whileHover={{ scale: 1.02, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto bg-brand-red hover:bg-brand-red-hover text-white font-medium text-base px-8 py-4 rounded-xl shadow-lg transition duration-200 hover:shadow-xl flex items-center justify-center space-x-3 cursor-pointer"
-            id="hero-primary-cta"
-          >
-            <span>Try a Course module</span>
-            <ArrowRight className="w-5 h-5 animate-bounce-right" />
-          </motion.button>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 items-center text-left py-8 md:py-12">
           
-          <motion.button
-            onClick={() => {
-              const element = document.getElementById("quiz-section");
-              element?.scrollIntoView({ behavior: "smooth" });
-            }}
-            whileHover={{ scale: 1.02, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 font-semibold text-base px-8 py-4 rounded-xl border border-slate-200 shadow-xs transition duration-200 flex items-center justify-center space-x-2 cursor-pointer"
-            id="hero-secondary-cta"
-          >
-            <Question className="w-5 h-5 text-slate-400" />
-            <span>Test Your Survival Quotient</span>
-          </motion.button>
-        </motion.div>
- 
+          {/* Left: Content column */}
+          <div className="flex flex-col items-start text-left space-y-6">
+            <motion.div 
+              className="inline-flex items-center space-x-2 bg-brand-red-light text-brand-red px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-brand-red/20"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <Sparkle className="w-3.5 h-3.5 text-brand-red animate-pulse" />
+              <span>CALM. FOCUSED. UNSTOPPABLE.</span>
+            </motion.div>
+            
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-navy-950 tracking-tight leading-[1.15] max-w-2xl"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <span className="block">The UPSC examination is</span>
+              <span className="block text-brand-red">not a sprint.</span>
+              <span className="block">It is a <span className="text-navy-900 bg-brand-red-light px-2 rounded-md border border-brand-red/15">marathon of Discipline</span>.</span>
+            </motion.h1>
+     
+            <motion.p 
+              className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-xl"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <span className="font-semibold text-navy-900 block">PANDA IAS stands for aspirants who believe that quiet consistency defeats temporary brilliance.</span>
+            </motion.p>
+     
+            {/* Companion Call-to-action */}
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto pt-2"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              <motion.button
+                onClick={() => {
+                  const element = document.getElementById("trial-section");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full sm:w-auto bg-brand-red hover:bg-brand-red-hover text-white font-medium text-base px-8 py-4 rounded-xl shadow-lg transition duration-200 hover:shadow-xl flex items-center justify-center space-x-3 cursor-pointer"
+                id="hero-primary-cta"
+              >
+                <span>Try a Course module</span>
+                <ArrowRight className="w-5 h-5 animate-bounce-right" />
+              </motion.button>
+              
+              <motion.button
+                onClick={() => {
+                  const element = document.getElementById("quiz-section");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 font-semibold text-base px-8 py-4 rounded-xl border border-slate-200 shadow-xs transition duration-200 flex items-center justify-center space-x-2 cursor-pointer"
+                id="hero-secondary-cta"
+              >
+                <Question className="w-5 h-5 text-slate-400" />
+                <span>Test Your Survival Quotient</span>
+              </motion.button>
+            </motion.div>
+          </div>
+
+          {/* Right: 3D interactive Panda column */}
+          <div className="w-full h-[320px] sm:h-[380px] lg:h-[450px] flex items-center justify-center bg-dot-grid rounded-3xl border border-slate-200/80 shadow-xs bg-white/70 overflow-hidden relative group">
+            {/* Absolute accent border indicators for tech detail */}
+            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-slate-200 rounded-tl-2xl pointer-events-none group-hover:border-brand-red/35 transition-colors duration-300" />
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-slate-200 rounded-br-2xl pointer-events-none group-hover:border-brand-red/35 transition-colors duration-300" />
+            
+            <Panda3DHero />
+          </div>
+
+        </div>
+
         {/* Handholding reassuring ribbon */}
         <motion.div 
-          className="mt-12 p-5 bg-white border border-slate-200/80 rounded-2xl max-w-2xl mx-auto flex items-center space-x-4 text-left shadow-xs hover:shadow-md transition-shadow duration-300"
+          className="mt-12 p-5 bg-white border border-slate-200/80 rounded-2xl max-w-4xl flex items-center space-x-4 text-left shadow-xs hover:shadow-md transition-shadow duration-300"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
