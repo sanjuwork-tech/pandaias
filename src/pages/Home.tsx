@@ -8,6 +8,7 @@ import { SURVIVAL_TRAITS, CONTROVERSY_DETAILS, SURVIVOR_QUIZ_QUESTIONS } from ".
 import { Course, SurvivalTrait } from "../types";
 import { motion, AnimatePresence } from "motion/react";
 import IndiaMapSection from "../components/IndiaMapSection";
+import lbsnaaImage from "../../assets/LBSNAA.png";
 
 export default function Home({ setActivePage }: { setActivePage: (page: string) => void }) {
   // Selected trait for philosophy viewer
@@ -76,6 +77,25 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
+        {/* LBSNAA Banner right under Navbar */}
+        <motion.div 
+          className="w-full max-w-3xl mx-auto mb-10 text-center space-y-4"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+        >
+          <span className="text-xs sm:text-sm font-mono font-bold text-slate-500 uppercase tracking-widest block">
+            Your journey to the ultimate training ground
+          </span>
+          <div className="w-full h-32 sm:h-40 md:h-48 overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs bg-white/70 backdrop-blur-xs flex items-center justify-center p-4">
+            <img 
+              src={lbsnaaImage} 
+              alt="LBSNAA Gateway" 
+              className="w-full h-full object-contain select-none pointer-events-none" 
+            />
+          </div>
+        </motion.div>
+
         <motion.div 
           className="inline-flex items-center space-x-2 bg-brand-red-light text-brand-red px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-brand-red/20 mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}
