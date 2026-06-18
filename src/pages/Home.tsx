@@ -79,19 +79,19 @@ export default function Home({ setActivePage }: { setActivePage: (page: string) 
       >
         {/* LBSNAA Banner right under Navbar */}
         <motion.div 
-          className="w-full max-w-3xl mx-auto mb-10 text-center space-y-4"
+          className="w-full mb-10 text-center space-y-4"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
-          <span className="text-xs sm:text-sm font-mono font-bold text-slate-500 uppercase tracking-widest block">
+          <span className="text-xs sm:text-sm font-mono font-bold text-slate-500 uppercase tracking-widest block text-navy-800">
             Your journey to the ultimate training ground
           </span>
-          <div className="w-full h-32 sm:h-40 md:h-48 overflow-hidden rounded-2xl border border-slate-200/80 shadow-xs bg-white/70 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="w-full overflow-hidden flex items-center justify-center">
             <img 
               src={lbsnaaImage} 
               alt="LBSNAA Gateway" 
-              className="w-full h-full object-contain select-none pointer-events-none" 
+              className="w-full h-auto select-none pointer-events-none" 
             />
           </div>
         </motion.div>
