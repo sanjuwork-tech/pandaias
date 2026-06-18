@@ -1,6 +1,6 @@
 import React from "react";
-import { Sparkle, Handshake, CheckCircle } from "@phosphor-icons/react";
 import logo from "../../assets/Logonew.png";
+import lbsnaaImage from "../../assets/LBSNAA.png";
 
 interface FooterProps {
   setActivePage: (page: string) => void;
@@ -8,96 +8,75 @@ interface FooterProps {
 
 export default function Footer({ setActivePage }: FooterProps) {
   return (
-    <footer className="bg-navy-950 text-slate-300 border-t border-navy-900 mt-12 py-16" id="app-footer">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          
-          {/* Brand Philosophy column */}
-          <div className="md:col-span-2 space-y-4" id="footer-philosophy-col">
-            <div className="flex items-center space-x-2">
-              <div className="w-[120px] h-[40px] bg-white rounded-md overflow-hidden flex items-center justify-center shrink-0">
-                <img src={logo} alt="PandaIAS Logo" className="w-full h-full object-contain" />
-              </div>
-            </div>
-            <p className="text-slate-400 text-sm max-w-sm leading-relaxed">
-              We celebrate quiet consistency, structured focus, and disciplined consistency. Walk steadily like a panda, showing up every single day.
+    <footer className="w-full bg-slate-50 mt-16 pt-12 border-t border-slate-200" id="app-footer">
+      {/* 1. Centered header text & logo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-6 space-y-4">
+        <h3 className="text-xl sm:text-2xl font-serif text-navy-950 font-semibold tracking-wide">
+          Your journey to the ultimate training ground.
+        </h3>
+        <div className="flex justify-center">
+          <div className="w-[150px] h-[50px] flex items-center justify-center shrink-0 cursor-pointer" onClick={() => setActivePage("home")}>
+            <img src={logo} alt="PandaIAS Logo" className="w-full h-full object-contain" />
+          </div>
+        </div>
+      </div>
+
+      {/* 2. Full-Width LBSNAA Silhouette Image */}
+      <div className="w-full overflow-hidden flex justify-center border-b border-slate-200 bg-white">
+        <img 
+          src={lbsnaaImage} 
+          alt="LBSNAA Silhouette" 
+          className="w-full max-w-7xl h-auto max-h-48 md:max-h-60 object-contain select-none pointer-events-none" 
+        />
+      </div>
+
+      {/* 3. Navy Bottom Banner */}
+      <div className="bg-navy-950 text-slate-300 py-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col items-center space-y-6">
+          {/* Horizontal Links */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+            <button 
+              onClick={() => setActivePage("home")} 
+              className="hover:text-white transition duration-200 cursor-pointer"
+            >
+              Home Classroom
+            </button>
+            <span className="text-slate-700">|</span>
+            <button 
+              onClick={() => setActivePage("resources")} 
+              className="hover:text-white transition duration-200 cursor-pointer"
+            >
+              Survivor's Resources
+            </button>
+            <span className="text-slate-700">|</span>
+            <button 
+              onClick={() => setActivePage("about")} 
+              className="hover:text-white transition duration-200 cursor-pointer"
+            >
+              Our Honest Story
+            </button>
+            <span className="text-slate-700">|</span>
+            <button 
+              onClick={() => setActivePage("contact")} 
+              className="hover:text-white transition duration-200 cursor-pointer"
+            >
+              24/7 Support Line
+            </button>
+          </div>
+
+          {/* Legal / Copyright Bottom Row */}
+          <div className="w-full border-t border-navy-900 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4 text-center md:text-left">
+            <p className="order-2 md:order-1">
+              UPSC is a marathon. Walk slow, walk long.
             </p>
-            <div className="flex items-center space-x-2 text-xs font-mono text-brand-red pt-2">
-              <Handshake className="w-3.5 h-3.5" />
-              <span>Calm. Focused. Unstoppable.</span>
-            </div>
-          </div>
-
-          {/* Quick links column */}
-          <div className="space-y-3" id="footer-links-col">
-            <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-white">THE PLATFORM</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>
-                <button 
-                  onClick={() => setActivePage("home")} 
-                  className="hover:text-white transition duration-200 cursor-pointer"
-                >
-                  Home Classroom
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => setActivePage("resources")} 
-                  className="hover:text-white transition duration-200 cursor-pointer"
-                >
-                  Survivor's Resources
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => setActivePage("about")} 
-                  className="hover:text-white transition duration-200 cursor-pointer"
-                >
-                  Our Honest Story
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => setActivePage("contact")} 
-                  className="hover:text-white transition duration-200 cursor-pointer"
-                >
-                  24/7 Support Line
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Core Trust column */}
-          <div className="space-y-4" id="footer-trust-col">
-            <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-white">OUR COVENANT</h4>
-            <div className="space-y-2 text-xs text-slate-400 leading-relaxed">
-              <div className="flex items-start space-x-2">
-                <CheckCircle className="w-3.5 h-3.5 text-navy-300 shrink-0 mt-0.5" />
-                <span>No deceptive non-refundable clauses.</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <CheckCircle className="w-3.5 h-3.5 text-navy-300 shrink-0 mt-0.5" />
-                <span>3-Day Full trial starts at just ₹249.</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <CheckCircle className="w-3.5 h-3.5 text-navy-300 shrink-0 mt-0.5" />
-                <span>Direct phone access to real ex-aspirants.</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-navy-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} PandaIAS Companion Institute. Built on the bedrock of disciplined consistency.</p>
-          <div className="flex space-x-6 mt-4 sm:mt-0" id="footer-legal-bar">
-            <span>UPSC is a marathon. Walk slow, walk long.</span>
-            <span>Supporting aspirants nationwide.</span>
+            <p className="order-1 md:order-2 font-medium">
+              © {new Date().getFullYear()} PandaIAS Companion Institute. Built on the bedrock of disciplined consistency.
+            </p>
+            <p className="order-3">
+              Supporting aspirants nationwide.
+            </p>
           </div>
         </div>
-
       </div>
     </footer>
   );
