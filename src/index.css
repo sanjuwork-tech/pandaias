@@ -32,6 +32,13 @@
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight text-navy-900;
   }
+
+  /* Global focus-visible style for brand-pink keyboard indicators */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-red);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(219, 39, 119, 0.15);
+  }
 }
 
 /* Custom scrollbar for an elegant feel */

@@ -30,10 +30,17 @@ interface MainsPYQAnalysisPageProps {
 export default function MainsPYQAnalysisPage({ setActivePage }: MainsPYQAnalysisPageProps) {
   const [selectedPaper, setSelectedPaper] = useState<string>("GS 1");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // Set document title and track analytics
   useEffect(() => {
     document.title = "UPSC Mains PYQ Weightage Analysis (2013-2025) | PandaIAS";
+    
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 350);
+    return () => clearTimeout(timer);
   }, [selectedPaper]);
 
   const rawItems = useMemo(() => {
@@ -251,7 +258,32 @@ export default function MainsPYQAnalysisPage({ setActivePage }: MainsPYQAnalysis
             </thead>
             <tbody className="divide-y divide-slate-100">
               <AnimatePresence mode="popLayout">
-                {filteredItems.length === 0 ? (
+                {isLoading ? (
+                  Array.from({ length: 6 }).map((_, idx) => (
+                    <tr key={`skeleton-${idx}`} className="animate-pulse border-b border-slate-100">
+                      {/* Description placeholder */}
+                      <td className="p-4 w-[280px]">
+                        <div className="h-3.5 bg-slate-200 rounded-sm w-3/4 mb-2" />
+                        <div className="h-3 bg-slate-100 rounded-sm w-1/2" />
+                      </td>
+                      {/* Year cells placeholder */}
+                      {YEARS.map(year => (
+                        <td key={year} className="py-4 px-2 text-center w-[45px]">
+                          <div className="h-3 bg-slate-200 rounded-sm w-4 mx-auto" />
+                        </td>
+                      ))}
+                      {/* Total cell placeholder */}
+                      <td className="py-4 px-2 text-center w-[55px]">
+                        <div className="h-3.5 bg-slate-200 rounded-sm w-5 mx-auto" />
+                      </td>
+                      {/* Weightage Visual placeholder */}
+                      <td className="py-4 px-3 w-[120px]">
+                        <div className="h-1.5 bg-slate-200 rounded-full w-full mb-1.5" />
+                        <div className="h-2 bg-slate-100 rounded-sm w-12" />
+                      </td>
+                    </tr>
+                  ))
+                ) : filteredItems.length === 0 ? (
                   <tr>
                     <td colSpan={YEARS.length + 3} className="p-8 text-center text-xs text-slate-400 font-medium">
                       No matching syllabus topics found for your search query.

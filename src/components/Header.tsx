@@ -185,7 +185,7 @@ export default function Header({ activePage, setActivePage }: HeaderProps) {
               key={item.id}
               id={`mobile-nav-btn-${item.id}`}
               onClick={() => setActivePage(item.id)}
-              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full text-xs font-semibold uppercase mr-2.5 transition-all ${
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full text-xs font-semibold uppercase mr-2.5 transition-all cursor-pointer ${
                 isActive
                   ? "bg-navy-900 text-white"
                   : "bg-white text-slate-600 border border-slate-200/80"

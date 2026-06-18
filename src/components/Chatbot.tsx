@@ -12,7 +12,7 @@ interface Message {
   sender: "bot" | "user";
   text: string;
   timestamp: Date;
-  actions?: { label: string; action: () => void; primary?: boolean }[];
+  actions?: { label: string; action: () => void; primary?: boolean; icon?: React.ComponentType<any> }[];
 }
 
 interface ChatbotProps {
@@ -148,12 +148,12 @@ Our platform is built on ground-level empathy and total honesty. What would you 
   };
 
   const getMainMenuActions = () => [
-    { label: "🗺️ Syllabus Metro Map", action: () => selectResource("metro_map") },
-    { label: "📝 Mains Panda Answers", action: () => selectResource("mains_answers") },
-    { label: "🔍 Prelims PYQ Analysis", action: () => selectResource("prelims_pyq") },
-    { label: "🏛️ Constitution Explorer", action: () => selectResource("constitution") },
-    { label: "📖 Trial Courses (₹249)", action: () => selectResource("courses") },
-    { label: "💬 Talk to a Mentor", action: () => selectResource("mentor") }
+    { label: "Syllabus Metro Map", action: () => selectResource("metro_map"), icon: MapTrifold },
+    { label: "Mains Panda Answers", action: () => selectResource("mains_answers"), icon: BookOpen },
+    { label: "Prelims PYQ Analysis", action: () => selectResource("prelims_pyq"), icon: MagnifyingGlass },
+    { label: "Constitution Explorer", action: () => selectResource("constitution"), icon: ShieldCheck },
+    { label: "Trial Courses (₹249)", action: () => selectResource("courses"), icon: Compass },
+    { label: "Talk to a Mentor", action: () => selectResource("mentor"), icon: Handshake }
   ];
 
   const selectResource = (type: string) => {
@@ -161,12 +161,14 @@ Our platform is built on ground-level empathy and total honesty. What would you 
     let botResponse = "";
     let routeAction = () => {};
     let routeLabel = "";
+    let routeIcon: React.ComponentType<any> | undefined = undefined;
 
     switch (type) {
       case "metro_map":
         userText = "Tell me about the Syllabus Metro Map";
         botResponse = `The **Companion's Syllabus Metro Map** is our signature interactive tool! It strips down the complex terms of the UPSC syllabus into simple, clickable metro lines and stations, linking each micro-topic directly to relevant resources. Avoid studying blindly—let's keep your direction locked in!`;
-        routeLabel = "🗺️ Open Syllabus Metro Map";
+        routeLabel = "Open Syllabus Metro Map";
+        routeIcon = MapTrifold;
         routeAction = () => {
           setActivePage("metro-map");
           setIsOpen(false);
@@ -175,7 +177,8 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       case "mains_answers":
         userText = "Tell me about Mains Panda Answers";
         botResponse = `We have loaded detailed blueprints for **UPSC Mains PYQs (2023, 2024, and 2025)** under the **Panda Answers** section. Instead of unachievable academic model answers, we show you how to write structured, honest answers in exactly 7 minutes under exam pressure! Check them out on our resources page.`;
-        routeLabel = "📝 View Panda Answers";
+        routeLabel = "View Panda Answers";
+        routeIcon = BookOpen;
         routeAction = () => {
           setActivePage("mains-panda-answers");
           setIsOpen(false);
@@ -184,7 +187,8 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       case "prelims_pyq":
         userText = "Show me the Prelims PYQ Analysis";
         botResponse = `Standard elimination shortcuts are dead post-2023. Our **Prelims PYQ Analysis** resource maps out past questions topic-by-topic to help you understand the examiner's mind, decode option traps, and build conceptual depth that stands the test of changes.`;
-        routeLabel = "🔍 Browse Prelims PYQs";
+        routeLabel = "Browse Prelims PYQs";
+        routeIcon = MagnifyingGlass;
         routeAction = () => {
           setActivePage("pyq-analysis");
           setIsOpen(false);
@@ -193,7 +197,8 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       case "constitution":
         userText = "What is the Constitution Explorer?";
         botResponse = `Our new **Constitution Explorer** offers a clean dynamic column view to search, read, and master every article, part, and schedule of the Indian Constitution. It's the ultimate visual guide for GS Paper 2!`;
-        routeLabel = "🏛️ Open Constitution Explorer";
+        routeLabel = "Open Constitution Explorer";
+        routeIcon = ShieldCheck;
         routeAction = () => {
           setActivePage("constitution-explorer");
           setIsOpen(false);
@@ -202,7 +207,8 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       case "courses":
         userText = "What are the Trial Courses?";
         botResponse = `We don't charge ₹1.5 Lakhs upfront. You can unlock premium 3-day hand-holding cohorts (GS Foundation, Editorial Linkages, Ethics/Essay companion rooms) starting at just **₹249**! Log in and check them out to try our empathetic trial methodology today.`;
-        routeLabel = "📖 Explore Trial Courses";
+        routeLabel = "Explore Trial Courses";
+        routeIcon = Compass;
         routeAction = () => {
           setActivePage("home");
           // Scroll to courses section
@@ -216,7 +222,8 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       case "mentor":
         userText = "How do I reach a mentor?";
         botResponse = `Need an emotional anchor, a study planner check-in, or syllabus clarity? Our mentors (Prashanth, Anusha, Varun, Riya, and Sanju) are ex-aspirants who have lived the struggle. We will support you. Head to our Contact page to send a query or check our resources!`;
-        routeLabel = "💬 Go to Contact Page";
+        routeLabel = "Go to Contact Page";
+        routeIcon = Handshake;
         routeAction = () => {
           setActivePage("contact");
           setIsOpen(false);
@@ -242,8 +249,8 @@ Our platform is built on ground-level empathy and total honesty. What would you 
       botResponse,
       900,
       [
-        { label: routeLabel, action: routeAction, primary: true },
-        { label: "🔙 Back to Main Menu", action: goToMainMenu }
+        { label: routeLabel, action: routeAction, primary: true, icon: routeIcon },
+        { label: "Back to Main Menu", action: goToMainMenu, icon: ArrowLeft }
       ]
     );
   };
@@ -378,19 +385,23 @@ Our platform is built on ground-level empathy and total honesty. What would you 
                   {/* Render inline action choices if this is the last message and has actions */}
                   {msg.actions && msg.actions.length > 0 && messages[messages.length - 1].id === msg.id && (
                     <div className="mt-2 flex flex-wrap gap-1.5 w-full justify-start">
-                      {msg.actions.map((act, index) => (
-                        <button
-                          key={index}
-                          onClick={act.action}
-                          className={`text-[10px] px-2.5 py-1.5 rounded-md font-medium cursor-pointer transition-all duration-150 border active:translate-y-0.5 ${
-                            act.primary 
-                              ? "bg-brand-red text-white border-brand-red hover:bg-brand-red-hover hover:scale-[1.02]" 
-                              : "bg-white text-navy-950 border-slate-200 hover:bg-slate-50 hover:text-brand-red"
-                          }`}
-                        >
-                          {act.label}
-                        </button>
-                      ))}
+                      {msg.actions.map((act, index) => {
+                        const Icon = act.icon;
+                        return (
+                          <button
+                            key={index}
+                            onClick={act.action}
+                            className={`text-[10px] px-2.5 py-1.5 rounded-md font-medium cursor-pointer transition-all duration-150 border active:translate-y-0.5 flex items-center gap-1.5 ${
+                              act.primary 
+                                ? "bg-brand-red text-white border-brand-red hover:bg-brand-red-hover hover:scale-[1.02]" 
+                                : "bg-white text-navy-950 border-slate-200 hover:bg-slate-50 hover:text-brand-red"
+                            }`}
+                          >
+                            {Icon && <Icon className="w-3.5 h-3.5 shrink-0" />}
+                            <span>{act.label}</span>
+                          </button>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
